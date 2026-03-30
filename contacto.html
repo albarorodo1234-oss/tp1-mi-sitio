@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es"> <head>
+    <meta charset="UTF-8">
+    <title>Contacto - Mi Sitio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Contacto</h1>
+    </header>
+
+    <main>
+        <form action="#" method="POST">
+            <label for="nombre">Nombre completo *</label>
+            <input type="text" id="nombre" name="nombre" 
+                   placeholder="Ej: Juan Pérez" required minlength="3">
+
+            <label for="email">Correo electrónico *</label>
+            <input type="email" id="email" name="email" 
+                   placeholder="juan@mail.com" required>
+
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" 
+                   placeholder="381-1234567" pattern="[0-9]{3}-[0-9]{7}">
+
+            <label for="motivo">Motivo de consulta *</label>
+            <select id="motivo" name="motivo" required>
+                <option value="">-- Seleccioná una opción --</option>
+                <option value="presupuesto">Presupuesto</option>
+                <option value="soporte">Soporte Técnico</option>
+                <option value="otros">Otros</option>
+            </select>
+
+            <label for="mensaje">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" rows="5" 
+                      required minlength="10" placeholder="Escribí aquí..."></textarea>
+
+            <label>
+                <input type="checkbox" name="terminos" required> 
+                Acepto los términos y condiciones *
+            </label>
+
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </main>
+</body>
+</html>
