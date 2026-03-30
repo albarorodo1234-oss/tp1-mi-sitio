@@ -65,3 +65,33 @@ ul, ol {
  margin-bottom: 1rem;
 }
 
+/* --- Consigna 2: Estilos de Validación --- */
+
+/* 1. Verde para campos válidos */
+input:valid, textarea:valid {
+    border: 2px solid #16A34A;
+    background-color: #F0FFF4;
+}
+
+/* 2. Rojo para campos inválidos (solo cuando el usuario ya escribió algo) */
+input:not(:placeholder-shown):invalid, 
+textarea:not(:placeholder-shown):invalid {
+    border: 2px solid #DC2626;
+    background-color: #FEF2F2;
+}
+
+/* 3. Foco: resalte azul cuando el usuario hace clic para escribir */
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #2E75B6;
+    box-shadow: 0 0 0 3px rgba(46, 117, 182, 0.2);
+}
+
+/* Estilo para que el formulario se vea ordenado */
+form {
+    max-width: 450px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
