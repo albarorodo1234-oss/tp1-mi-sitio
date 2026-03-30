@@ -1,0 +1,9 @@
+Reflexión sobre Metodologías Ágiles y Git
+
+El uso de metodologías ágiles, específicamente a través del tablero Kanban, me permitió desglosar un proyecto complejo en
+ tareas manejables. Esto evita la sobrecarga de trabajo y permite visualizar el progreso real en tiempo real.
+
+Por otro lado, la implementación de Git y el flujo de ramas (branching) fue fundamental. Trabajar en ramas separadas para 
+el formulario y los estilos me dio la seguridad de que el código estable (main) nunca se rompería mientras yo experimentaba
+con nuevas funcionalidades. Esta forma de trabajo no solo es más ordenada, sino que es esencial para el desarrollo colabor
+ativo en equipos profesionales, donde la trazabilidad y el control de versiones son la base de la calidad del software.
