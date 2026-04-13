@@ -5,23 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Primer Sitio</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header> 
-        <h1> Mi Primer Sitio Web - Albaro</h1>
-        <nav> 
+
+    <header class="header-principal">
+        <div class="logo">
+            <h1> Mi Primer Sitio Web - Albaro</h1>
+        </div> 
+        <nav class="nav-menu"> 
             <a href="index.html">Inicio</a> |
             <a href="#Proyectos">Proyectos</a> |
             <a href="contacto.html">Contacto</a>
         </nav>
     </header>
+
 <main>
-    <section id="Inicio">
+    <section id="Inicio" class="seccion-perfil">
+    <div class="perfil-container">
         <h2>Bienvenido</h2>
         <p>Hola soy Albaro, estudio Analista de Sistemas en Salta.</p>
-        <img src="images/Foto.perfil.png" alt="Foto de perfil de Albaro Rodo" width="200">
-    </section>
+        <img src="images/Foto.perfil.png" alt="Foto de perfil de Albaro Rodo" class="perfil-foto">
+    </div>
+</section>
 
     <section id="Proyectos">
         <h2>Proyectos</h2>
