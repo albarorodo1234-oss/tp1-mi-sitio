@@ -87,13 +87,6 @@ h1, h2, h3 {
     color: var(--color-accent);     /* Cambia al naranja ámbar de tus variables */
 }
 
- /* ===== FOOTER ===== */
-footer {
- background-color: #270f91;
-color: white;
-text-align: center;
-
-}
 /* ===== MAIN ===== */
 main {
  max-width: 900px; /* Ancho maximo */
@@ -252,4 +245,39 @@ form {
 .card h3 {
     margin-top: 0;
     color: var(--color-primary);
+}
+
+/* ===== PUNTO 5: FOOTER (Cierre de Estructura) ===== */
+.footer-principal {
+    background-color: #1a1a1a; /* Fondo oscuro profesional [cite: 114] */
+    color: #ffffff;
+    padding: 3rem 0;
+    margin-top: 4rem;          /* Espacio extra tras el contenido */
+}
+
+.footer-contenido {
+    display: flex;             /* Activamos Flexbox [cite: 11] */
+    flex-direction: column;    /* Elementos uno sobre otro [cite: 14] */
+    align-items: center;       /* Centrado horizontal [cite: 20] */
+    gap: 1.5rem;               /* Espacio entre items [cite: 26] */
+}
+
+.footer-contenido p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.redes-sociales {
+    display: flex;             /* Links en fila [cite: 66] */
+    gap: 2rem;                 /* Espacio entre redes [cite: 68] */
+}
+
+.redes-sociales a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;    /* Transición suave [cite: 73] */
+}
+
+.redes-sociales a:hover {
+    color: var(--color-accent); /* Tu naranja ámbar [cite: 75] */
 }
