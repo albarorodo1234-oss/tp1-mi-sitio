@@ -179,3 +179,38 @@ form {
 .perfil-foto:hover {
     transform: scale(1.05);
 }
+
+/* ===== PUNTO 4: SECCIÓN DE TARJETAS (Patrón 2 - Clase 8) ===== */
+
+.contenedor-cards {
+    display: flex;          /* Activa Flexbox según la teoría */
+    flex-wrap: wrap;        /* Permite que las tarjetas bajen si no hay espacio */
+    gap: 1.5rem;            /* Espacio entre tarjetas */
+    padding: 2rem 0;
+    justify-content: center; /* Centra las tarjetas si sobra espacio */
+}
+
+.card {
+    /* LA LÍNEA MÁGICA de la diapositiva: grow, shrink, basis */
+    flex: 1 1 280px;        
+    
+    background-color: white; 
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    color: var(--color-text); /* Para que el texto sea legible */
+    
+    /* Transiciones suaves para el Punto 4 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto Hover pedido: transform + transition */
+.card:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--color-primary);
+}
