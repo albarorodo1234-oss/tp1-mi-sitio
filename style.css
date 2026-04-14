@@ -24,6 +24,49 @@ Codigo
 
 .dark-theme { --color-bg: #1E293B; --color-text: #F8FAFC; }
 
+/* ===== DISEÑO MACRO: CSS GRID (Clase 9) ===== */
+.layout {
+    display: grid;
+    /* Sidebar fija a la izquierda y el contenido ocupa el resto */
+    grid-template-columns: 220px 1fr; 
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header  header"
+        "sidebar main"
+        "footer  footer";
+    min-height: 100vh;
+    gap: 0; /* Según el patrón de la diapositiva [cite: 58] */
+}
+
+/* Asignación de áreas */
+.header-principal { grid-area: header; }
+.sidebar          { grid-area: sidebar; background: #F1F5F9; padding: 20px; }
+.main-contenido   { grid-area: main; background: #ffffff; }
+.footer-principal { grid-area: footer; }
+/* ===== PUNTO EXTRA: LAYOUT CON CSS GRID (Teoría Clase 9) ===== */
+
+/* Este es el selector para la clase que pusiste en el HTML */
+.layout {
+    display: grid; /* [cite: 179, 259] */
+    
+    /* Definimos columnas y filas según el Ing. Díaz */
+    grid-template-columns: 220px 1fr; /* [cite: 200, 260] */
+    grid-template-rows: auto 1fr auto; /* [cite: 201, 261] */
+    
+    /* Mapeo de áreas con nombre [cite: 202, 262] */
+    grid-template-areas:
+        "header  header"
+        "sidebar main"
+        "footer  footer"; /* [cite: 203-205, 263-265] */
+        
+    min-height: 100vh; /* [cite: 187, 207, 266] */
+}
+
+/* Asignamos las áreas a tus clases actuales [cite: 209-213, 269-272] */
+.header-principal { grid-area: header; }
+.sidebar          { grid-area: sidebar; background-color: #f8f9fa; padding: 2rem; border-right: 1px solid #ddd; }
+.main-contenido   { grid-area: main; }
+.footer-principal { grid-area: footer; }
 
 /* ===== RESET BASICO ===== */
 * {
