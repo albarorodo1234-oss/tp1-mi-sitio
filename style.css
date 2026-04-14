@@ -28,39 +28,25 @@ Codigo
 .layout {
     display: grid;
     /* Sidebar fija a la izquierda y el contenido ocupa el resto */
-    grid-template-columns: 220px 1fr; 
+    grid-template-columns: 1fr; 
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
-        "header  header"
-        "sidebar main"
-        "footer  footer";
+        "header"
+        "main"
+        "footer";
     min-height: 100vh;
     gap: 0; /* Según el patrón de la diapositiva [cite: 58] */
 }
 
+
 /* Asignación de áreas */
 .header-principal { grid-area: header; }
-.sidebar          { grid-area: sidebar; background: #F1F5F9; padding: 1rem; }
+.sidebar          { display: none; grid-area: sidebar; background: #F1F5F9; padding: 1rem; }
 .main-contenido   { grid-area: main; padding: 2rem; }
 .footer-principal { grid-area: footer; }
 /* ===== PUNTO EXTRA: LAYOUT CON CSS GRID (Teoría Clase 9) ===== */
 
 /* Este es el selector para la clase que pusiste en el HTML */
-.layout {
-    display: grid; /* [cite: 179, 259] */
-    
-    /* Definimos columnas y filas según el Ing. Díaz */
-    grid-template-columns: 220px 1fr; /* [cite: 200, 260] */
-    grid-template-rows: auto 1fr auto; /* [cite: 201, 261] */
-    
-    /* Mapeo de áreas con nombre [cite: 202, 262] */
-    grid-template-areas:
-        "header  header"
-        "sidebar main"
-        "footer  footer"; /* [cite: 203-205, 263-265] */
-        
-    min-height: 100vh; /* [cite: 187, 207, 266] */
-}
 
 
 /* ===== RESET BASICO ===== */
@@ -127,10 +113,12 @@ h1, h2, h3 {
 
 /* ===== MAIN ===== */
 main {
- max-width: 900px; /* Ancho maximo */
+ grid-area: main; 
+ width: 100%; /* Ancho maximo */
+ padding: 1rem; 
  margin: 0 auto; /* Centrar horizontalmente */
- padding: 2rem;
 }
+
 /* ===== SECCIONES ===== */
 section {
  background-color: rgb(89, 88, 95);
@@ -355,4 +343,47 @@ form {
     font-size: 2.5rem; /* Para que los emojis se vean grandes */
     display: block;
     margin-bottom: 1rem;
+}
+
+/* TP3 PUNTO 8 */
+/* ===== ETAPA 2: TABLETS (min-width: 768px) ===== */
+@media (min-width: 768px) {
+    .layout {
+        /* Volvemos a las 2 columnas: Sidebar y Main */
+        grid-template-columns: 220px 1fr;
+        grid-template-areas:
+            "header  header"
+            "sidebar main"
+            "footer  footer";
+    }
+
+    .sidebar {
+        display: block; /* ¡MÁGICO! El sidebar vuelve a aparecer */
+        background-color: #F1F5F9;
+        padding: 1.5rem;
+        border-right: 1px solid #e2e8f0;
+    }
+
+    main {
+        padding: 2rem; /* Más espacio para respirar en pantallas grandes */
+    }
+}
+
+/* VISTA LAPTOPS O NOTEBOOK */ 
+/* ===== ETAPA 3: LAPTOPS (min-width: 1024px) ===== */
+@media (min-width: 1024px) {
+    .layout {
+        /* Limitamos el ancho máximo a 1200px y centramos con margin auto */
+        max-width: 1200px;
+        margin: 0 auto;
+        box-shadow: 0 0 50px rgba(0,0,0,0.2); /* Un toque de sombra a los costados */
+    }
+}
+
+/* ===== ETAPA 4: MONITORES ULTRA-WIDE (min-width: 1440px) ===== */
+@media (min-width: 1440px) {
+    .layout {
+        /* En pantallas muy grandes, le damos un poco más de aire */
+        max-width: 1400px;
+    }
 }
