@@ -5,7 +5,7 @@ Codigo
     --color-secondary: #1B2A4A;  /* Azul oscuro para el Header */
     --color-accent: #F59E0B;     /* Ámbar para resaltar */
     --color-text: #334155;       /* Gris oscuro para el cuerpo del texto */
-    --color-bg: #b4b4b4;         /* Fondo de la página */
+    --color-bg: #1B2A4A;         /* Fondo de la página */
     --radius: 8px;               /* Redondeado de bordes [cite: 23] */
     --shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra para tarjetas [cite: 24] */
     --font-main: 'Inter', 'Segoe UI', Arial, sans-serif; /* Tipografía  */
@@ -40,8 +40,8 @@ Codigo
 
 /* Asignación de áreas */
 .header-principal { grid-area: header; }
-.sidebar          { grid-area: sidebar; background: #F1F5F9; padding: 20px; }
-.main-contenido   { grid-area: main; background: #ffffff; }
+.sidebar          { grid-area: sidebar; background: #F1F5F9; padding: 1rem; }
+.main-contenido   { grid-area: main; padding: 2rem; }
 .footer-principal { grid-area: footer; }
 /* ===== PUNTO EXTRA: LAYOUT CON CSS GRID (Teoría Clase 9) ===== */
 
@@ -62,11 +62,6 @@ Codigo
     min-height: 100vh; /* [cite: 187, 207, 266] */
 }
 
-/* Asignamos las áreas a tus clases actuales [cite: 209-213, 269-272] */
-.header-principal { grid-area: header; }
-.sidebar          { grid-area: sidebar; background-color: #f8f9fa; padding: 2rem; border-right: 1px solid #ddd; }
-.main-contenido   { grid-area: main; }
-.footer-principal { grid-area: footer; }
 
 /* ===== RESET BASICO ===== */
 * {
@@ -78,8 +73,8 @@ Codigo
 /* 2. Tipografía Profesional (Punto 2 del TP) */
 body {
     font-family: var(--font-main);
-    color: var(--color-text);
     background-color: var(--color-bg);
+    color: var(--color-text);
     font-size: 1rem;       /* 1rem = 16px como pide el TP */
     line-height: 1.6;      /* Espaciado obligatorio */
 }
