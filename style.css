@@ -319,3 +319,40 @@ form {
 .redes-sociales a:hover {
     color: var(--color-accent); /* Tu naranja ámbar [cite: 75] */
 }
+
+/* ===== PUNTO 7: GALERÍA AUTO-RESPONSIVE (Clase 9) ===== */
+
+.contenedor-galeria {
+    display: grid; /* Activamos la grilla [cite: 78] */
+    
+    /* LA LÍNEA MÁGICA: se adapta sola sin media queries [cite: 79, 97] */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    
+    gap: 1.25rem; /* Espaciado pedido en la consigna [cite: 80] */
+    padding: 2rem 0;
+}
+
+/* Estilo de las tarjetas individuales [cite: 91-96] */
+.tarjeta-proyecto {
+    background-color: #ffffff;
+    color: var(--color-text);
+    padding: 20px;
+    border-radius: var(--radius); /* Usamos tu variable de 8px [cite: 93] */
+    box-shadow: var(--shadow);    /* Usamos tu variable de sombra [cite: 95] */
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Para el hover */
+}
+
+/* Efecto Hover pedido en el punto 7 */
+.tarjeta-proyecto:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border-color: var(--color-primary);
+}
+
+.tarjeta-proyecto span {
+    font-size: 2.5rem; /* Para que los emojis se vean grandes */
+    display: block;
+    margin-bottom: 1rem;
+}
