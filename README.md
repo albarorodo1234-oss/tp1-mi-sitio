@@ -13,7 +13,7 @@ Este proyecto es un portfolio profesional desarrollado para la materia Práctica
 * **CSS Grid:** Layout bidimensional (Macro-layout y Galería auto-responsive).
 * **Responsive Design:** Estrategia **Mobile-First** con 3 breakpoints.
 
-## 📸 Capturas de Pantalla
+## 📸 Evidencias de Reponsividad
 ### Vista Mobile (iPhone 14 Pro - 393px)
 ![Mobile](./images/mobile.png)
 
