@@ -1,47 +1,124 @@
 Codigo
+/* 1. Definición de Variables (Punto 1 del TP) [cite: 14, 15] */
+:root {
+    --color-primary: #2E75B6;    /* Azul para botones */
+    --color-secondary: #1B2A4A;  /* Azul oscuro para el Header */
+    --color-accent: #F59E0B;     /* Ámbar para resaltar */
+    --color-text: #334155;       /* Gris oscuro para el cuerpo del texto */
+    --color-bg: #1B2A4A;         /* Fondo de la página */
+    --radius: 8px;               /* Redondeado de bordes [cite: 23] */
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra para tarjetas [cite: 24] */
+    --font-main: 'Inter', 'Segoe UI', Arial, sans-serif; /* Tipografía  */
+}
+
+
+/* Usar las variables */
+
+.header-principal { background: var(--color-secondary); }
+
+.boton { background: var(--color-primary); border-radius: var(--radius); }
+
+.tarjeta { box-shadow: var(--shadow); border-radius: var(--radius); }
+
+/* Cambiar el tema completo modificando SOLO las variables */
+
+.dark-theme { --color-bg: #1E293B; --color-text: #F8FAFC; }
+
+/* ===== DISEÑO MACRO: CSS GRID (Clase 9) ===== */
+.layout {
+    display: grid;
+    /* Sidebar fija a la izquierda y el contenido ocupa el resto */
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    min-height: 100vh;
+    gap: 0; /* Según el patrón de la diapositiva [cite: 58] */
+}
+
+
+/* Asignación de áreas */
+.header-principal { grid-area: header; }
+.sidebar          { display: none; grid-area: sidebar; background: #F1F5F9; padding: 1rem; }
+.main-contenido   { grid-area: main; padding: 2rem; }
+.footer-principal { grid-area: footer; }
+/* ===== PUNTO EXTRA: LAYOUT CON CSS GRID (Teoría Clase 9) ===== */
+
+/* Este es el selector para la clase que pusiste en el HTML */
+
+
 /* ===== RESET BASICO ===== */
 * {
  margin: 0; /* Elimina margenes por defecto */
  padding: 0; /* Elimina relleno por defecto */
  box-sizing: border-box; /* Los bordes se incluyen en el ancho */
 }
-/* ===== TIPOGRAFIA BASE ===== */
-body {
- font-family: 'Segoe UI', Arial, sans-serif;
- font-size: 16px; /* Tamanio base */
- line-height: 1.6; /* Espacio entre lineas */
- color: #ffffff; /* Gris oscuro para el texto */
- background-color: #282729; /* Fondo gris claro */
-}
-/* ===== HEADER ===== */
-header {
- background-color: #1565C0; /* Azul primario */
- color: white;
- text-align: center;
- padding: 2rem; /* Espacio interno */
-}
-/* ===== NAV ===== */
-nav {
- background-color: #3352a7; /* Azul oscuro */
- padding: 1rem;
- text-align: center;
-}
-nav a 
-{color: white;
-}
- /* ===== FOOTER ===== */
-footer {
- background-color: #270f91;
-color: white;
-text-align: center;
 
+/* 2. Tipografía Profesional (Punto 2 del TP) */
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-size: 1rem;       /* 1rem = 16px como pide el TP */
+    line-height: 1.6;      /* Espaciado obligatorio */
 }
+
+h1 { font-size: 2.5rem; }  /* Tamaño pedido en consigna */
+h2 { font-size: 1.8rem; }  /* Tamaño pedido en consigna */
+h3 { font-size: 1.3rem; }  /* Tamaño pedido en consigna */
+
+h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-primary); /* Usamos tu variable para los títulos */
+}
+
+/* ===== HEADER ===== */
+/* 3. Navbar con Flexbox (Punto 3 del TP) */
+.header-principal {
+    display: flex;                  /* Activa Flexbox */
+    justify-content: space-between; /* Logo a la izquierda, links a la derecha */
+    align-items: center;            /* Centrado vertical */
+    
+    background-color: var(--color-secondary); /* Usa tu variable azul oscuro */
+    padding: 1rem 5%;               /* Espacio interno prolijo */
+    color: rgb(6, 109, 243);      /* Color de transición del texto */              
+}
+
+.header-principal h1 {
+    font-size: 1.5rem;              /* Tamaño moderado para el header */
+    margin: 0;
+    color: rgb(19, 19, 19);
+}
+
+/* Contenedor de los links */
+.nav-menu {
+    display: flex;                  /* Los links también en fila */
+    gap: 1.5rem;                    /* Espacio entre cada link */
+}
+
+.nav-menu a {
+    color: rgb(0, 0, 0);                   /* Texto color */
+    text-decoration: none;          /* Sin subrayado */
+    font-weight: 500;
+    transition: color 0.3s ease;    /* Transición suave para el hover */
+}
+
+/* Efecto Hover obligatorio */
+.nav-menu a:hover {
+    color: var(--color-accent);     /* Cambia al naranja ámbar de tus variables */
+}
+
 /* ===== MAIN ===== */
 main {
- max-width: 900px; /* Ancho maximo */
+ grid-area: main; 
+ width: 100%; /* Ancho maximo */
+ padding: 1rem; 
  margin: 0 auto; /* Centrar horizontalmente */
- padding: 2rem;
 }
+
 /* ===== SECCIONES ===== */
 section {
  background-color: rgb(89, 88, 95);
@@ -94,4 +171,219 @@ form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+/* Estilos para centrar el contenido de la sección de inicio */
+.seccion-perfil {
+    padding: 3rem 1rem;       /* Espacio arriba/abajo (rem como pide el Punto 2) */
+    text-align: center;       /* Centra el texto H2 y el P */
+}
+
+.perfil-container {
+    display: flex;             /* Activamos Flexbox (preparación Punto 3) */
+    flex-direction: column;    /* Ponemos uno debajo de otro: Titulo, P e Imagen */
+    align-items: center;       /* Centra todo horizontalmente */
+    gap: 1.5rem;               /* Espacio entre los elementos */
+}
+
+.perfil-foto {
+    max-width: 200px;          /* El tamaño que ya tenías en el HTML */
+    width: 100%;
+    border-radius: var(--radius); /* Aplicamos variable de borde del TP [cite: 367] */
+    box-shadow: var(--shadow);    /* Aplicamos variable de sombra del TP [cite: 368] */
+    transition: transform 0.3s;   /* Preparamos para el punto de transiciones */
+}
+
+/* Un toque extra: que la foto se mueva un poquito al pasar el mouse */
+.perfil-foto:hover {
+    transform: scale(1.05);
+}
+
+/* ... (estilos del header arriba) ... */
+
+/* ===== PUNTO 5: HERO SECTION (Patrón 3 - Clase 8) ===== */
+.hero {
+    display: flex;            /* ¡ACTIVA Flexbox! */
+    justify-content: center;  /* Centrado horizontal */
+    align-items: center;      /* Centrado vertical */
+    
+    min-height: 80vh;         /* Alto pedido en tu consigna */
+    background: linear-gradient(135deg, #1B2A4A, #2E75B6); /* Degradado Clase 8 */
+    color: white;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;         /* Según teoría del Ing. Díaz */
+    padding: 2rem;
+}
+
+/* Estilo del Botón CTA */
+.btn-cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 12px 30px;
+    background-color: var(--color-accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-cta:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* ... (estilos de las tarjetas/Punto 4 abajo) ... */
+
+/* ===== PUNTO 4: SECCIÓN DE TARJETAS (Patrón 2 - Clase 8) ===== */
+
+.contenedor-cards {
+    display: flex;          /* Activa Flexbox según la teoría */
+    flex-wrap: wrap;        /* Permite que las tarjetas bajen si no hay espacio */
+    gap: 1.5rem;            /* Espacio entre tarjetas */
+    padding: 2rem 0;
+    justify-content: center; /* Centra las tarjetas si sobra espacio */
+}
+
+.card {
+    /* LA LÍNEA MÁGICA de la diapositiva: grow, shrink, basis */
+    flex: 1 1 280px;        
+    
+    background-color: white; 
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    color: var(--color-text); /* Para que el texto sea legible */
+    
+    /* Transiciones suaves para el Punto 4 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto Hover pedido: transform + transition */
+.card:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--color-primary);
+}
+
+/* ===== PUNTO 5: FOOTER (Cierre de Estructura) ===== */
+.footer-principal {
+    background-color: #1a1a1a; /* Fondo oscuro profesional [cite: 114] */
+    color: #ffffff;
+    padding: 3rem 0;
+    margin-top: 4rem;          /* Espacio extra tras el contenido */
+}
+
+.footer-contenido {
+    display: flex;             /* Activamos Flexbox [cite: 11] */
+    flex-direction: column;    /* Elementos uno sobre otro [cite: 14] */
+    align-items: center;       /* Centrado horizontal [cite: 20] */
+    gap: 1.5rem;               /* Espacio entre items [cite: 26] */
+}
+
+.footer-contenido p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.redes-sociales {
+    display: flex;             /* Links en fila [cite: 66] */
+    gap: 2rem;                 /* Espacio entre redes [cite: 68] */
+}
+
+.redes-sociales a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;    /* Transición suave [cite: 73] */
+}
+
+.redes-sociales a:hover {
+    color: var(--color-accent); /* Tu naranja ámbar [cite: 75] */
+}
+
+/* ===== PUNTO 7: GALERÍA AUTO-RESPONSIVE (Clase 9) ===== */
+
+.contenedor-galeria {
+    display: grid; /* Activamos la grilla [cite: 78] */
+    
+    /* LA LÍNEA MÁGICA: se adapta sola sin media queries [cite: 79, 97] */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    
+    gap: 1.25rem; /* Espaciado pedido en la consigna [cite: 80] */
+    padding: 2rem 0;
+}
+
+/* Estilo de las tarjetas individuales [cite: 91-96] */
+.tarjeta-proyecto {
+    background-color: #ffffff;
+    color: var(--color-text);
+    padding: 20px;
+    border-radius: var(--radius); /* Usamos tu variable de 8px [cite: 93] */
+    box-shadow: var(--shadow);    /* Usamos tu variable de sombra [cite: 95] */
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Para el hover */
+}
+
+/* Efecto Hover pedido en el punto 7 */
+.tarjeta-proyecto:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border-color: var(--color-primary);
+}
+
+.tarjeta-proyecto span {
+    font-size: 2.5rem; /* Para que los emojis se vean grandes */
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* TP3 PUNTO 8 */
+/* ===== ETAPA 2: TABLETS (min-width: 768px) ===== */
+@media (min-width: 768px) {
+    .layout {
+        /* Volvemos a las 2 columnas: Sidebar y Main */
+        grid-template-columns: 220px 1fr;
+        grid-template-areas:
+            "header  header"
+            "sidebar main"
+            "footer  footer";
+    }
+
+    .sidebar {
+        display: block; /* ¡MÁGICO! El sidebar vuelve a aparecer */
+        background-color: #F1F5F9;
+        padding: 1.5rem;
+        border-right: 1px solid #e2e8f0;
+    }
+
+    main {
+        padding: 2rem; /* Más espacio para respirar en pantallas grandes */
+    }
+}
+
+/* VISTA LAPTOPS O NOTEBOOK */ 
+/* ===== ETAPA 3: LAPTOPS (min-width: 1024px) ===== */
+@media (min-width: 1024px) {
+    .layout {
+        /* Limitamos el ancho máximo a 1200px y centramos con margin auto */
+        max-width: 1200px;
+        margin: 0 auto;
+        box-shadow: 0 0 50px rgba(0,0,0,0.2); /* Un toque de sombra a los costados */
+    }
+}
+
+/* ===== ETAPA 4: MONITORES ULTRA-WIDE (min-width: 1440px) ===== */
+@media (min-width: 1440px) {
+    .layout {
+        /* En pantallas muy grandes, le damos un poco más de aire */
+        max-width: 1400px;
+    }
 }

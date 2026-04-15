@@ -5,28 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Primer Sitio</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header> 
-        <h1> Mi Primer Sitio Web - Albaro</h1>
-        <nav> 
-            <a href="index.html">Inicio</a> |
-            <a href="#Proyectos">Proyectos</a> |
-            <a href="contacto.html">Contacto</a>
-        </nav>
-    </header>
-<main>
-    <section id="Inicio">
+    <div class="layout"> 
+        <header class="header-principal">
+            <div class="logo">
+                <h1>Albaro Rodó</h1>
+            </div> 
+            <nav class="nav-menu"> 
+                <a href="index.html">Inicio</a>
+                <a href="#Proyectos">Proyectos</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </header>
+        
+        <aside class="sidebar">
+            <nav class="nav-sidebar">
+                <p><strong>Menú Lateral</strong></p>
+                <ul>
+                    <li><a href="#Inicio">Perfil</a></li>
+                    <li><a href="#Proyectos">Habilidades</a></li>
+                    <li><a href="contacto.html">Enviar Mensaje</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-contenido">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Desarrollador Web Junior</h1>
+                    <p>Analista de Sistemas en formación enfocado en soluciones eficientes.</p>
+                    <a href="#Proyectos" class="btn-cta">Ver mis proyectos</a>
+                </div>
+            </section> 
+            
+            <section id="proyectos" class="seccion-proyectos">
+    <h2>Mis Proyectos</h2>
+    
+    <div class="contenedor-galeria">
+        
+        <article class="tarjeta-proyecto">
+            <span>🚀</span> <h3>Proyecto 1</h3>
+            <p>Descripción breve de lo que aprendí o hice aquí.</p>
+        </article>
+
+        <article class="tarjeta-proyecto">
+            <span>💻</span>
+            <h3>Proyecto 2</h3>
+            <p>Descripción breve de lo que aprendí o hice aquí.</p>
+        </article>
+
+        <article class="tarjeta-proyecto">
+            <span>📱</span>
+            <h3>Proyecto 3</h3>
+            <p>Descripción breve de lo que aprendí o hice aquí.</p>
+        </article>
+
+        <article class="tarjeta-proyecto">
+            <span>🌐</span>
+            <h3>Proyecto 4</h3>
+            <p>Descripción breve de lo que aprendí o hice aquí.</p>
+        </article>
+
+    </div>
+             </section>
+        <main>
+    
+    <section id="Inicio" class="seccion-perfil">
+    <div class="perfil-container">
         <h2>Bienvenido</h2>
         <p>Hola soy Albaro, estudio Analista de Sistemas en Salta.</p>
-        <img src="images/Foto.perfil.png" alt="Foto de perfil de Albaro Rodo" width="200">
+        <img src="images/Foto.perfil.png" alt="Foto de perfil de Albaro Rodo" class="perfil-foto">
+    </div>
+</section>
+
     </section>
 
-    <section id="Proyectos">
-        <h2>Proyectos</h2>
-        <p>Actualmente estoy desarrollando mi primera pagina web para la materia Practicas Profesionalizantes</p>
-    </section>
+<section class="cards" id="Proyectos">
+    <h2>Mis Proyectos y Habilidades</h2>
+    <div class="contenedor-cards">
+        <article class="card">
+            <h3>Sistemas y Programación</h3>
+            <p>Desarrollo de lógica y algoritmos utilizando HTML, CSS y Python para la resolución de problemas complejos.</p>
+        </article>
+
+        <article class="card">
+            <h3>Soporte Técnico</h3>
+            <p>Mantenimiento y optimización de hardware y software, asegurando el rendimiento óptimo de los equipos.</p>
+        </article>
+
+        <article class="card">
+            <h3>Docente en Educación Primaria</h3>
+            <p>Implementación y administración de plataformas digitales y recursos tecnológicos para la optimización de procesos de enseñanza-aprendizaje.</p>
+        </article>
+    </div>
+</section>
+
+<section id="Contacto">
 
     <section id="Contacto">
         <h2>Contacto</h2>
@@ -39,8 +121,17 @@
     </section>
 
 </main>
-<footer>
-    <p>Realizado por Albaro Rodo - 2026</p>
-</footer>
+
+    <footer class="footer-principal">
+        <div class="footer-contenido">
+            <p>&copy; 2026 Albaro Rodo - Analista de Sistemas</p>
+            <div class="redes-sociales">
+                <a href="https://github.com/" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+                <a href="https://instagram.com/" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+    </div>
 </body>
 </html>
